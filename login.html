@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Entrar | Invest+</title>
+    
+    <link rel="stylesheet" href="style.css">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="auth-container">
+        <div class="auth-bg-blob blob-1"></div>
+        <div class="auth-bg-blob blob-2"></div>
+
+        <div class="auth-logo">
+            <div class="logo-icon"><i class="fa-solid fa-star"></i></div>
+            <span class="logo-text">Invest<span>+</span></span>
+        </div>
+
+        <main class="auth-card">
+            <div class="auth-header">
+                <h2>Bem-vindo de volta!</h2>
+                <p>Entre na sua conta para continuar sua jornada financeira</p>
+            </div>
+
+            <form class="auth-form" id="loginForm" novalidate>
+                
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <div class="input-wrapper" id="wrapper-login-email">
+                        <i class="fa-regular fa-envelope input-icon"></i>
+                        <input type="email" id="login-email" placeholder="seu@email.com">
+                    </div>
+                    <span class="error-message" id="error-login-email">Digite um e-mail válido.</span>
+                </div>
+
+                <div class="form-group">
+                    <div class="label-row">
+                        <label for="password">Senha</label>
+                        <a href="#" class="forgot-link">Esqueceu a senha?</a>
+                    </div>
+                    
+                    <div class="input-wrapper" id="wrapper-login-password">
+                        <i class="fa-solid fa-lock input-icon"></i>
+                        <input type="password" id="login-password" placeholder="Digite sua senha">
+                        
+                    </div>
+                    <span class="error-message" id="error-login-password">A senha é obrigatória.</span>
+                </div>
+
+                <button type="submit" class="btn btn-block btn-gradient" style="margin-top: 1rem;">Entrar</button>
+            </form>
+
+            <div class="auth-divider">
+                <span>Ou continue com</span>
+            </div>
+
+            <div class="social-login">
+                <button class="btn btn-google social-btn">
+                    <i class="fa-brands fa-google" style="color: #DB4437;"></i> Google
+                </button>
+                <button class="btn btn-facebook social-btn">
+                    <i class="fa-brands fa-facebook-f"></i> Facebook
+                </button>
+            </div>
+
+            <div class="auth-footer">
+                <p>Não tem uma conta? <a href="register.html" class="text-purple link-bold">Cadastre-se gratuitamente</a></p>
+            </div>
+        </main>
+
+        <a href="index.html" class="back-link">
+            <i class="fa-solid fa-arrow-left"></i> Voltar para o início
+        </a>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

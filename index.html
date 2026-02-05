@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invest+ | Construa seu futuro financeiro</title>
+    
+    <link rel="stylesheet" href="style.css">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        /* Agrupa os botões para ficarem lado a lado */
+        .nav-actions {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem; /* Espaço entre 'Entrar' e 'Começar' */
+        }
+
+        /* Estilo do link 'Entrar' (sutil) */
+        .btn-link {
+            font-weight: 600;
+            color: #475569; /* Cinza escuro */
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .btn-link:hover {
+            color: #8B5CF6; /* Roxo da marca ao passar o mouse */
+        }
+
+        /* Ajuste para mobile: esconde os botões em telas muito pequenas se necessário */
+        @media (max-width: 768px) {
+            .nav-actions {
+                display: none; /* Geralmente botões de topo somem no mobile e vão pro menu */
+            }
+            .mobile-menu-btn {
+                display: block;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="container navbar-content">
+            <div class="logo">
+                <div class="logo-icon">
+                    <i class="fa-solid fa-star"></i>
+                </div>
+                <span class="logo-text">Invest<span>+</span></span>
+            </div>
+            
+            <nav class="nav-links">
+                <a href="#recursos">Recursos</a>
+                <a href="#diferenciais">Diferenciais</a>
+                <a href="#comparativo">Comparativo</a>
+            </nav>
+            
+            <div class="nav-actions">
+                <a href="login.html" class="btn-link">Entrar</a>
+                <a href="register.html" class="btn btn-primary btn-shadow">Começar Agora</a>
+            </div>
+            
+            <button class="mobile-menu-btn"><i class="fa-solid fa-bars"></i></button>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container hero-grid">
+            <div class="hero-text">
+                <span class="badge badge-purple">
+                    <i class="fa-solid fa-gamepad"></i> Educação Financeira Gamificada
+                </span>
+                
+                <h1>
+                    Construa seu <span class="text-purple">futuro</span> <br>
+                    <span class="text-blue">financeiro</span> de forma simples
+                </h1>
+                
+                <p class="subtitle">
+                    Aprenda a gerenciar suas finanças, criar metas de longo prazo e começar a investir através de uma experiência gamificada e intuitiva.
+                </p>
+                
+                <div class="cta-group">
+                    <a class="btn btn-primary btn-lg btn-shadow" href="register.html">
+                        Comece Grátis <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                    <button class="btn btn-outline btn-lg">
+                        Saiba Mais
+                    </button>
+                </div>
+
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <p class="stat-number">10K+</p>
+                        <p class="stat-label">Usuários Ativos</p>
+                    </div>
+                    <div class="stat-item">
+                        <p class="stat-number">95%</p>
+                        <p class="stat-label">Satisfação</p>
+                    </div>
+                    <div class="stat-item">
+                        <p class="stat-number">4.8 <i class="fa-solid fa-star"></i></p>
+                        <p class="stat-label">Avaliação</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="hero-image-container animate-float">
+                <div class="blob blob-purple"></div>
+                <div class="blob blob-blue"></div>
+                <img src="https://images.unsplash.com/photo-1511632765486-a01980e01a18?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Jovem feliz usando celular" class="hero-img">
+            </div>
+        </div>
+    </section>
+
+    <section class="section bg-white">
+        <div class="container">
+            <div class="section-header center">
+                <span class="badge badge-blue">Para Quem é o Invest+?</span>
+                <br>
+                <h2>Feito para <span class="text-purple">você</span></h2>
+                <br>
+                <p>Se você é um jovem adulto entre 18-30 anos que está começando a gerenciar suas finanças, o Invest+ é perfeito para você.</p>
+                <br>
+            </div>
+
+            <div class="grid-3">
+                <div class="card hover-card">
+                    <div class="icon-box bg-purple">
+                        <i class="fa-solid fa-user-group"></i>
+                    </div>
+                    <h3>Jovens Adultos</h3>
+                    <p>Pessoas entre 18-30 anos que estão começando sua jornada de independência financeira e querem aprender de forma prática.</p>
+                </div>
+                <div class="card featured-card">
+                    <div class="top-bar"></div>
+                    <div class="icon-box bg-purple">
+                        <i class="fa-regular fa-heart"></i>
+                    </div>
+                    <h3>Primeiros Passos</h3>
+                    <p>Sente insegurança, medo ou confusão sobre como organizar o dinheiro? Nós transformamos o complexo em simples.</p>
+                </div>
+                <div class="card hover-card">
+                    <div class="icon-box bg-purple">
+                        <i class="fa-solid fa-bullseye"></i>
+                    </div>
+                    <h3>Metas Claras</h3>
+                    <p>Quer começar a investir mas não sabe por onde? Construímos juntos um planejamento de longo prazo personalizado.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="recursos" class="section bg-light">
+        <div class="container">
+            <div class="section-header center">
+                <span class="badge badge-purple-light">Recursos</span>
+                <h2>Tudo que você precisa para <br> <span class="text-purple">começar</span></h2>
+                <p>Ferramentas poderosas e simples de usar para transformar sua relação com o dinheiro.</p>
+            </div>
+
+            <div class="grid-3">
+                <div class="card hover-lift">
+                    <div class="icon-sq bg-fuchsia">
+                        <i class="fa-solid fa-gamepad"></i>
+                    </div>
+                    <h4>Gamificação</h4>
+                    <p>Aprenda finanças através de desafios, conquistas e recompensas que tornam o aprendizado divertido.</p>
+                </div>
+                <div class="card hover-lift">
+                    <div class="icon-sq bg-blue">
+                        <i class="fa-solid fa-chart-line"></i>
+                    </div>
+                    <h4>Planejamento de Metas</h4>
+                    <p>Defina objetivos de curto e longo prazo e acompanhe seu progresso em tempo real.</p>
+                </div>
+                <div class="card hover-lift">
+                    <div class="icon-sq bg-emerald">
+                        <i class="fa-solid fa-book"></i>
+                    </div>
+                    <h4>Educação Financeira</h4>
+                    <p>Conteúdo didático e prático sobre organização financeira, investimentos e hábitos saudáveis.</p>
+                </div>
+                <div class="card hover-lift">
+                    <div class="icon-sq bg-orange">
+                        <i class="fa-solid fa-trophy"></i>
+                    </div>
+                    <h4>Sistema de Conquistas</h4>
+                    <p>Ganhe medalhas e desbloqueie novos níveis conforme você aprende e atinge suas metas.</p>
+                </div>
+                <div class="card hover-lift">
+                    <div class="icon-sq bg-violet">
+                        <i class="fa-solid fa-shield-halved"></i>
+                    </div>
+                    <h4>Clareza e Simplicidade</h4>
+                    <p>Interface intuitiva que prioriza o entendimento, sem termos complexos ou jargões financeiros.</p>
+                </div>
+                <div class="card hover-lift">
+                    <div class="icon-sq bg-rose">
+                        <i class="fa-solid fa-mobile-screen"></i>
+                    </div>
+                    <h4>Multi-Plataforma</h4>
+                    <p>Acesse de qualquer lugar através do seu celular, tablet ou computador.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="diferenciais" class="section bg-white">
+        <div class="container differential-grid">
+            <div class="diff-image-wrapper">
+                <img src="https://images.unsplash.com/photo-1518458028785-8fbcd101ebb9?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Moedas" class="rounded-img">
+            </div>
+            
+            <div class="diff-content">
+                <span class="badge badge-green">Nosso Diferencial</span>
+                <h2>Por que escolher o <span class="text-purple">Invest+?</span></h2>
+                <p>Diferente de plataformas complexas e focadas apenas em rentabilidade, priorizamos sua evolução e clareza.</p>
+                <br>
+                <h3>O que nos torna únicos:</h3>
+
+                <div class="checklist">
+                    <div class="check-item">
+                        <i class="fa-solid fa-circle-check"></i>
+                        <div>
+                            <h4>Clareza em Primeiro Lugar</h4>
+                            <p>Interface limpa e linguagem simples. Nada de termos complicados.</p>
+                        </div>
+                    </div>
+                    <div class="check-item">
+                        <i class="fa-solid fa-circle-check"></i>
+                        <div>
+                            <h4>Foco em Hábitos</h4>
+                            <p>Construímos juntos uma base sólida de organização financeira.</p>
+                        </div>
+                    </div>
+                    <div class="check-item">
+                        <i class="fa-solid fa-circle-check"></i>
+                        <div>
+                            <h4>Gamificação Motivadora</h4>
+                            <p>Aprender finanças pode ser divertido! Use mecânicas de jogo.</p>
+                        </div>
+                    </div>
+                    <div class="check-item">
+                        <i class="fa-solid fa-circle-check"></i>
+                        <div>
+                            <h4>Longo Prazo</h4>
+                            <p>Focamos em construir um futuro financeiro sustentável.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="comparativo" class="section bg-light">
+        <div class="container max-w-small">
+            <h2 class="center mb-large">Invest+ vs. Plataformas Tradicionais</h2>
+            
+            <div class="comparison-grid">
+                <div class="card comparison-card active">
+                    <div class="center mb-medium">
+                        <span class="pill pill-purple">Invest+</span>
+                    </div>
+                    <ul class="comparison-list">
+                        <li><i class="fa-regular fa-circle-check success"></i> Interface simples e clara</li>
+                        <li><i class="fa-regular fa-circle-check success"></i> Educação gamificada</li>
+                        <li><i class="fa-regular fa-circle-check success"></i> Foco em hábitos saudáveis</li>
+                        <li><i class="fa-regular fa-circle-check success"></i> Planejamento de longo prazo</li>
+                        <li><i class="fa-regular fa-circle-check success"></i> Suporte para iniciantes</li>
+                    </ul>
+                </div>
+
+                <div class="card comparison-card active">
+                    <div class="center mb-medium">
+                        <span class="pill pill-gray">Outras Plataformas</span>
+                    </div>
+                    <ul class="comparison-list">
+                        <li><i class="fa-solid fa-xmark danger"></i> Interfaces complexas</li>
+                        <li><i class="fa-solid fa-xmark danger"></i> Foco apenas em rentabilidade</li>
+                        <li><i class="fa-solid fa-xmark danger"></i> Curva de aprendizado íngreme</li>
+                        <li><i class="fa-solid fa-xmark danger"></i> Termos técnicos demais</li>
+                        <li><i class="fa-solid fa-xmark danger"></i> Pouco suporte educacional</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <div class="cta-box">
+                <div class="cta-content">
+                    <span class="badge badge-white-transp">
+                        <i class="fa-solid fa-sparkles"></i> Comece Hoje Gratuitamente
+                    </span>
+                    <h2>Pronto para transformar <br> suas finanças?</h2>
+                    <p>Junte-se a milhares de jovens adultos que já estão construindo um futuro financeiro mais sólido.</p>
+                    
+                    <form class="cta-form">
+                        <a href="register.html" class="btn btn-white">
+                            Criar Conta Grátis <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                    </form>
+
+                    <div class="cta-features">
+                        <span><span class="dot"></span> Sem cartão de crédito</span>
+                        <span><span class="dot"></span> Cancele quando quiser</span>
+                    </div>
+                </div>
+                
+                <div class="cta-image-wrapper">
+                    <img src="https://images.unsplash.com/photo-1496337589254-7e19d01cec44?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Celular" class="cta-img">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="logo">
+                        <div class="logo-icon">
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <span class="logo-text text-white">Invest+</span>
+                    </div>
+                    <p>Educação financeira gamificada para jovens adultos construírem um futuro financeiro sólido.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Produto</h4>
+                    <ul>
+                        <li><a href="#">Recursos</a></li>
+                        <li><a href="#">Preços</a></li>
+                        <li><a href="#">Demonstração</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Empresa</h4>
+                    <ul>
+                        <li><a href="#">Sobre Nós</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Contato</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Suporte</h4>
+                    <ul>
+                        <li><a href="#">Central de Ajuda</a></li>
+                        <li><a href="#">Termos de Uso</a></li>
+                        <li><a href="#">Privacidade</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2026 Invest+. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

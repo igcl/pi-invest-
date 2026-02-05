@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Criar Conta | Invest+</title>
+    
+    <link rel="stylesheet" href="style.css">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="auth-container">
+        <div class="auth-bg-blob blob-1"></div>
+        <div class="auth-bg-blob blob-2"></div>
+
+        <div class="auth-logo">
+            <div class="logo-icon"><i class="fa-solid fa-star"></i></div>
+            <span class="logo-text">Invest<span>+</span></span>
+        </div>
+
+        <main class="auth-card">
+            <div class="auth-header">
+                <h2>Crie sua conta</h2>
+                <p>Comece sua jornada para o sucesso financeiro hoje mesmo</p>
+            </div>
+
+            <form class="auth-form" id="registerForm" novalidate>
+                
+                <div class="form-group">
+                    <label for="name">Nome completo</label>
+                    <div class="input-wrapper" id="wrapper-name">
+                        <i class="fa-regular fa-user input-icon"></i>
+                        <input type="text" id="name" placeholder="Seu nome completo">
+                    </div>
+                    <span class="error-message" id="error-name">Por favor, digite seu nome.</span>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <div class="input-wrapper" id="wrapper-email">
+                        <i class="fa-regular fa-envelope input-icon"></i>
+                        <input type="email" id="email" placeholder="seu@email.com">
+                    </div>
+                    <span class="error-message" id="error-email">Digite um e-mail válido.</span>
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Senha</label>
+                    <div class="input-wrapper" id="wrapper-password">
+                        <i class="fa-solid fa-lock input-icon"></i>
+                        <input type="password" id="password" placeholder="Mínimo 8 caracteres">
+                        <button type="button" class="toggle-password">
+                            <i class="fa-regular fa-eye"></i>
+                        </button>
+                    </div>
+                    <span class="error-message" id="error-password">A senha é obrigatória.</span>
+                </div>
+
+                <div class="form-group">
+                    <label for="confirm-password">Confirmar senha</label>
+                    <div class="input-wrapper" id="wrapper-confirm-password">
+                        <i class="fa-solid fa-lock input-icon"></i>
+                        <input type="password" id="confirm-password" placeholder="Digite a senha novamente">
+                        <button type="button" class="toggle-password">
+                            <i class="fa-regular fa-eye"></i>
+                        </button>
+                    </div>
+                    <span class="error-message" id="error-confirm-password">As senhas não coincidem.</span>
+                </div>
+
+                <div class="form-check">
+                    <input type="checkbox" id="terms">
+                    <label for="terms">Eu aceito os <a href="#">Termos de Uso</a> e a <a href="#">Política de Privacidade</a></label>
+                </div>
+                <span class="error-message" id="error-terms" style="margin-top: -10px; margin-bottom: 15px;">Você precisa aceitar os termos.</span>
+
+                <button type="submit" class="btn btn-block btn-gradient">Criar conta gratuitamente</button>
+            </form>
+
+            <div class="auth-divider">
+                <span>Ou cadastre-se com</span>
+            </div>
+
+            <div class="social-login">
+                <button class="btn btn-google social-btn">
+                    <i class="fa-brands fa-google" style="color: #DB4437;"></i> Google
+                </button>
+                <button class="btn btn-facebook social-btn">
+                    <i class="fa-brands fa-facebook-f"></i> Facebook
+                </button>
+            </div>
+
+            <div class="auth-footer">
+                <p>Já tem uma conta? <a href="#" class="text-purple link-bold">Fazer login</a></p>
+            </div>
+        </main>
+
+        <a href="index.html" class="back-link">
+            <i class="fa-solid fa-arrow-left"></i> Voltar para o início
+        </a>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

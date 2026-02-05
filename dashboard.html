@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard | Invest+</title>
+    
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body class="bg-light">
+
+    <header class="dash-header">
+        <div class="container dash-header-content">
+            <div class="auth-logo">
+                <div class="logo-icon"><i class="fa-solid fa-star"></i></div>
+                <span class="logo-text">Invest<span>+</span></span>
+            </div>
+            <div class="dash-user-actions">
+                <div class="level-badge">
+                    <i class="fa-solid fa-trophy"></i> Nível 5
+                </div>
+                <a href="index.html" class="btn btn-outline btn-sm">Sair</a>
+            </div>
+        </div>
+    </header>
+
+    <div class="container dash-container">
+        
+        <div class="welcome-banner">
+            <div class="welcome-left">
+                <img src="/images/user.png" alt="Foto do Usuario" class="user-avatar">
+                <div>
+                    <h1>Olá, João! <span class="wave">👋</span></h1>
+                    <p>Continue sua jornada para o sucesso financeiro</p>
+                </div>
+            </div>
+            <div class="welcome-right">
+                <div class="level-info">
+                    <span>Progresso do Nível</span>
+                    <span>650 / 1000 XP</span>
+                </div>
+                <div class="progress-bar-bg">
+                    <div class="progress-bar-fill" style="width: 65%;"></div>
+                </div>
+                
+                <div class="banner-stat-box">
+                    <i class="fa-solid fa-wallet"></i>
+                    <span>Total Economizado: <strong>R$ 2.450,00</strong></span>
+                </div>
+            </div>
+        </div>
+
+        <nav class="dash-tabs">
+            <button class="tab-btn active" onclick="openTab('overview')"><i class="fa-solid fa-house"></i> Visão Geral</button>
+            <button class="tab-btn" onclick="openTab('goals')"><i class="fa-solid fa-bullseye"></i> Metas</button>
+            <button class="tab-btn" onclick="openTab('learn')"><i class="fa-solid fa-book-open"></i> Aprender</button>
+            <button class="tab-btn" onclick="openTab('achievements')"><i class="fa-solid fa-medal"></i> Conquistas</button>
+        </nav>
+
+        <section id="tab-overview" class="tab-content active">
+            
+            <div class="stats-cards-grid">
+                <div class="stat-card green">
+                    <div class="stat-header">
+                        <i class="fa-solid fa-wallet"></i>
+                        <span class="chip">Este mês</span>
+                    </div>
+                    <div class="stat-value">R$ 2.450,00</div>
+                    <div class="stat-label">Economizado</div>
+                </div>
+
+                <div class="stat-card purple">
+                    <div class="stat-header">
+                        <i class="fa-solid fa-bullseye"></i>
+                        <span class="chip">3 ativas</span>
+                    </div>
+                    <div class="stat-value">65%</div>
+                    <div class="stat-label">Progresso médio</div>
+                </div>
+
+                <div class="stat-card orange">
+                    <div class="stat-header">
+                        <i class="fa-solid fa-bolt"></i>
+                        <span class="chip">Recorde: 12</span>
+                    </div>
+                    <div class="stat-value">7 dias</div>
+                    <div class="stat-label">Sequência atual</div>
+                </div>
+            </div>
+
+            <h3 class="section-title">Ações Rápidas</h3>
+            <div class="quick-actions-grid">
+                <div class="action-card">
+                    <div class="action-icon text-purple"><i class="fa-solid fa-piggy-bank"></i></div>
+                    <h4>Registrar Economia</h4>
+                    <span class="xp-badge">+25 XP</span>
+                </div>
+                <div class="action-card">
+                    <div class="action-icon text-blue"><i class="fa-solid fa-book"></i></div>
+                    <h4>Continuar Lição</h4>
+                    <span class="xp-badge">+125 XP</span>
+                </div>
+                <div class="action-card">
+                    <div class="action-icon text-green"><i class="fa-solid fa-bullseye"></i></div>
+                    <h4>Atualizar Meta</h4>
+                    <span class="xp-badge">+50 XP</span>
+                </div>
+                <div class="action-card">
+                    <div class="action-icon text-orange"><i class="fa-solid fa-chart-line"></i></div>
+                    <h4>Ver Progresso</h4>
+                    <span class="xp-badge">Análises</span>
+                </div>
+            </div>
+
+            <div class="section-header-row">
+                <h3 class="section-title">Suas Metas</h3>
+                <button class="btn-text" onclick="openTab('goals')">Ver todas</button>
+            </div>
+            
+            <div class="goals-list">
+                <div class="goal-item-row">
+                    <div class="goal-icon bg-blue-light text-blue"><i class="fa-solid fa-piggy-bank"></i></div>
+                    <div class="goal-info">
+                        <div class="goal-top">
+                            <h4>Reserva de Emergência</h4>
+                            <span class="percent text-blue">65%</span>
+                        </div>
+                        <div class="goal-values">R$ 6.500 de R$ 10.000</div>
+                        <div class="progress-track"><div class="progress-fill bg-blue" style="width: 65%;"></div></div>
+                    </div>
+                </div>
+                <div class="goal-item-row">
+                    <div class="goal-icon bg-purple-light text-purple"><i class="fa-solid fa-plane"></i></div>
+                    <div class="goal-info">
+                        <div class="goal-top">
+                            <h4>Viagem 2026</h4>
+                            <span class="percent text-purple">42%</span>
+                        </div>
+                        <div class="goal-values">R$ 2.100 de R$ 5.000</div>
+                        <div class="progress-track"><div class="progress-fill bg-purple" style="width: 42%;"></div></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="tab-goals" class="tab-content">
+            <div class="section-header-row mb-6">
+                <div>
+                    <h3 class="section-title mb-1">Suas Metas Financeiras</h3>
+                    <p class="text-muted text-sm">Acompanhe seu progresso e conquiste seus objetivos</p>
+                </div>
+                <button class="btn btn-primary btn-sm"><i class="fa-solid fa-plus"></i> Nova Meta</button>
+            </div>
+
+            <div class="goals-grid">
+                
+                <div class="goal-box">
+                    <div class="goal-box-header">
+                        <div class="goal-icon-lg bg-blue-light text-blue">
+                            <i class="fa-solid fa-piggy-bank"></i>
+                        </div>
+                        <span class="goal-percent text-blue">65%</span>
+                    </div>
+                    
+                    <h4 class="goal-title">Reserva de Emergência</h4>
+                    
+                    <div class="goal-stats">
+                        <span class="stat-label">Progresso</span>
+                        <span class="stat-value">R$ 6.500</span>
+                    </div>
+                    
+                    <div class="progress-track-lg">
+                        <div class="progress-fill bg-blue" style="width: 65%;"></div>
+                    </div>
+                    
+                    <div class="goal-stats mt-1 mb-4">
+                        <span class="stat-label">Meta</span>
+                        <span class="stat-value">R$ 10.000</span>
+                    </div>
+
+                    <button class="btn-action-outline">Adicionar Valor</button>
+                </div>
+
+                <div class="goal-box">
+                    <div class="goal-box-header">
+                        <div class="goal-icon-lg bg-purple-light text-purple">
+                            <i class="fa-solid fa-bullseye"></i>
+                        </div>
+                        <span class="goal-percent text-purple">42%</span>
+                    </div>
+                    
+                    <h4 class="goal-title">Viagem 2026</h4>
+                    
+                    <div class="goal-stats">
+                        <span class="stat-label">Progresso</span>
+                        <span class="stat-value">R$ 2.100</span>
+                    </div>
+                    
+                    <div class="progress-track-lg">
+                        <div class="progress-fill bg-purple" style="width: 42%;"></div>
+                    </div>
+                    
+                    <div class="goal-stats mt-1 mb-4">
+                        <span class="stat-label">Meta</span>
+                        <span class="stat-value">R$ 5.000</span>
+                    </div>
+
+                    <button class="btn-action-outline">Adicionar Valor</button>
+                </div>
+
+                <div class="goal-box">
+                    <div class="goal-box-header">
+                        <div class="goal-icon-lg bg-green-light text-green">
+                            <i class="fa-solid fa-arrow-trend-up"></i>
+                        </div>
+                        <span class="goal-percent text-green">75%</span>
+                    </div>
+                    
+                    <h4 class="goal-title">Primeiro Investimento</h4>
+                    
+                    <div class="goal-stats">
+                        <span class="stat-label">Progresso</span>
+                        <span class="stat-value">R$ 750</span>
+                    </div>
+                    
+                    <div class="progress-track-lg">
+                        <div class="progress-fill bg-green" style="width: 75%;"></div>
+                    </div>
+                    
+                    <div class="goal-stats mt-1 mb-4">
+                        <span class="stat-label">Meta</span>
+                        <span class="stat-value">R$ 1.000</span>
+                    </div>
+
+                    <button class="btn-action-outline">Adicionar Valor</button>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="tab-learn" class="tab-content">
+            <div class="mb-6">
+                <h3 class="section-title mb-1">Educação Financeira</h3>
+                <p class="text-muted text-sm">Complete lições e ganhe XP para subir de nível</p>
+            </div>
+
+            <div class="learn-layout">
+                <div class="lessons-list">
+                    <div class="lesson-card completed">
+                        <div class="lesson-icon"><i class="fa-solid fa-check"></i></div>
+                        <div class="lesson-info">
+                            <h4>O que é Educação Financeira?</h4>
+                            <div class="lesson-meta"><i class="fa-regular fa-clock"></i> 5 min <span class="xp">+50 XP</span></div>
+                        </div>
+                        <span class="badge badge-green text-xs">Completo</span>
+                    </div>
+                    
+                    <div class="lesson-card completed">
+                        <div class="lesson-icon"><i class="fa-solid fa-check"></i></div>
+                        <div class="lesson-info">
+                            <h4>Criando Seu Orçamento</h4>
+                            <div class="lesson-meta"><i class="fa-regular fa-clock"></i> 8 min <span class="xp">+75 XP</span></div>
+                        </div>
+                        <span class="badge badge-green text-xs">Completo</span>
+                    </div>
+
+                    <div class="lesson-card completed">
+                        <div class="lesson-icon"><i class="fa-solid fa-check"></i></div>
+                        <div class="lesson-info">
+                            <h4>Reserva de Emergência</h4>
+                            <div class="lesson-meta"><i class="fa-regular fa-clock"></i> 10 min <span class="xp">+100 XP</span></div>
+                        </div>
+                        <span class="badge badge-green text-xs">Completo</span>
+                    </div>
+
+                    <div class="lesson-card">
+                        <div class="lesson-icon locked"><i class="fa-solid fa-lock"></i></div>
+                        <div class="lesson-info">
+                            <h4>Entendendo Juros Compostos</h4>
+                            <div class="lesson-meta"><i class="fa-regular fa-clock"></i> 12 min <span class="xp text-orange">+125 XP</span></div>
+                        </div>
+                        <button class="btn btn-primary btn-sm">Começar <i class="fa-solid fa-arrow-right"></i></button>
+                    </div>
+
+                     <div class="lesson-card">
+                        <div class="lesson-icon locked"><i class="fa-solid fa-lock"></i></div>
+                        <div class="lesson-info">
+                            <h4>Primeiros Passos em Investimentos</h4>
+                            <div class="lesson-meta"><i class="fa-regular fa-clock"></i> 15 min <span class="xp text-orange">+150 XP</span></div>
+                        </div>
+                        <button class="btn btn-primary btn-sm">Começar <i class="fa-solid fa-arrow-right"></i></button>
+                    </div>
+                </div>
+
+                <div class="level-sidebar">
+                    <div class="level-card-big">
+                        <div class="level-icon"><i class="fa-solid fa-medal"></i></div>
+                        <h2>Nível 5</h2>
+                        <p class="mb-4 text-white/80 text-sm">650 / 1000 XP</p>
+                        <div class="progress-track bg-black/20"><div class="progress-fill bg-white" style="width: 65%;"></div></div>
+                    </div>
+
+                    <div class="dash-card mt-4">
+                        <h4 class="font-bold mb-4">Estatísticas</h4>
+                        <div class="stat-row flex justify-between mb-3 text-sm">
+                            <span class="text-muted">Lições completas</span>
+                            <span class="font-bold">3/5</span>
+                        </div>
+                        <div class="stat-row flex justify-between mb-3 text-sm">
+                            <span class="text-muted">Tempo total</span>
+                            <span class="font-bold">23 min</span>
+                        </div>
+                        <div class="stat-row flex justify-between text-sm">
+                            <span class="text-muted">XP ganho</span>
+                            <span class="font-bold text-purple">225 XP</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="tab-achievements" class="tab-content">
+            <div class="mb-6">
+                <h3 class="section-title mb-1">Suas Conquistas</h3>
+                <p class="text-muted text-sm">Desbloqueie conquistas conforme progride</p>
+            </div>
+
+            <div class="achievements-grid">
+                <div class="achievement-card unlocked">
+                    <div class="achieve-icon bg-orange text-white"><i class="fa-regular fa-star"></i></div>
+                    <h4>Primeira Meta</h4>
+                    <span class="badge badge-orange text-xs">Desbloqueado</span>
+                </div>
+                
+                <div class="achievement-card unlocked">
+                    <div class="achieve-icon bg-orange text-white"><i class="fa-solid fa-piggy-bank"></i></div>
+                    <h4>Economizador</h4>
+                    <span class="badge badge-orange text-xs">Desbloqueado</span>
+                </div>
+
+                <div class="achievement-card unlocked">
+                    <div class="achieve-icon bg-orange text-white"><i class="fa-regular fa-calendar-check"></i></div>
+                    <h4>5 Dias Seguidos</h4>
+                    <span class="badge badge-orange text-xs">Desbloqueado</span>
+                </div>
+
+                <div class="achievement-card unlocked">
+                    <div class="achieve-icon bg-orange text-white"><i class="fa-solid fa-arrow-trend-up"></i></div>
+                    <h4>Investidor Iniciante</h4>
+                    <span class="badge badge-orange text-xs">Desbloqueado</span>
+                </div>
+
+                <div class="achievement-card locked">
+                    <div class="achieve-icon"><i class="fa-solid fa-dollar-sign"></i></div>
+                    <h4>R$ 5.000 Economizados</h4>
+                    <span class="badge badge-gray text-xs">Bloqueado</span>
+                </div>
+
+                <div class="achievement-card locked">
+                    <div class="achieve-icon"><i class="fa-solid fa-bolt"></i></div>
+                    <h4>30 Dias de Streak</h4>
+                    <span class="badge badge-gray text-xs">Bloqueado</span>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <script>
+        function openTab(tabName) {
+            // 1. Esconder todos os conteúdos
+            const contents = document.querySelectorAll('.tab-content');
+            contents.forEach(content => content.classList.remove('active'));
+
+            // 2. Desativar todos os botões
+            const buttons = document.querySelectorAll('.tab-btn');
+            buttons.forEach(btn => btn.classList.remove('active'));
+
+            // 3. Mostrar o conteúdo selecionado
+            document.getElementById('tab-' + tabName).classList.add('active');
+
+            // 4. Ativar o botão clicado (truque para achar o botão certo)
+            buttons.forEach(btn => {
+                if(btn.getAttribute('onclick').includes(tabName)) {
+                    btn.classList.add('active');
+                }
+            });
+        }
+    </script>
+</body>
+</html>
