@@ -48,6 +48,9 @@
                 <div class="banner-stat-box">
                     <i class="fa-solid fa-wallet"></i>
                     <span>Total Economizado: <strong id="header-total-saved">R$ 0,00</strong></span>
+                    <p id="congrats-msg" style="font-size: 0.75rem; color: #d1fae5; margin-top: 4px; display: none;">
+                        🎉 Parabéns, você concluiu <span id="congrats-count">0</span> metas!
+                    </p>
                 </div>
             </div>
         </div>
@@ -57,6 +60,7 @@
             <button class="tab-btn" onclick="openTab('goals')"><i class="fa-solid fa-bullseye"></i> Metas</button>
             <button class="tab-btn" onclick="openTab('learn')"><i class="fa-solid fa-book-open"></i> Aprender</button>
             <button class="tab-btn" onclick="openTab('achievements')"><i class="fa-solid fa-medal"></i> Conquistas</button>
+            <button class="tab-btn" onclick="openTab('profile')"><i class="fa-solid fa-user"></i> Perfil</button>
         </nav>
 
         <section id="tab-overview" class="tab-content active">
@@ -97,12 +101,12 @@
                     <h4>Registrar Economia</h4>
                     <span class="xp-badge">+25 XP</span>
                 </div>
-                <div class="action-card">
+                <div class="action-card" onclick="openTab('learn')">
                     <div class="action-icon text-blue"><i class="fa-solid fa-book"></i></div>
                     <h4>Continuar Lição</h4>
                     <span class="xp-badge">+125 XP</span>
                 </div>
-                <div class="action-card">
+                <div class="action-card" onclick="openModal('new-goal')">
                     <div class="action-icon text-green"><i class="fa-solid fa-bullseye"></i></div>
                     <h4>Nova Meta</h4>
                     <span class="xp-badge">+50 XP</span>
@@ -114,18 +118,7 @@
                 </div>
             </div>
 
-            <div class="section-header-row">
-                <h3 class="section-title">Suas Metas</h3>
-                <button class="btn-text" onclick="openTab('goals')">Ver todas</button>
-            </div>
-            
-            <div class="goals-list" id="overview-goals-list">
-                <div style="text-align: center; padding: 2rem; color: #94A3B8; background: white; border-radius: 1rem; border: 1px dashed #E2E8F0;">
-                    <i class="fa-solid fa-clipboard-list" style="font-size: 2rem; margin-bottom: 1rem; opacity: 0.5;"></i>
-                    <p>Você ainda não criou nenhuma meta.</p>
-                </div>
-            </div>
-        </section>
+            </section>
 
         <section id="tab-goals" class="tab-content">
             <div class="section-header-row mb-6">
@@ -133,18 +126,20 @@
                     <h3 class="section-title mb-1">Suas Metas Financeiras</h3>
                     <p class="text-muted text-sm">Acompanhe seu progresso e conquiste seus objetivos</p>
                 </div>
-                <button class="btn btn-primary btn-sm"><i class="fa-solid fa-plus"></i> Nova Meta</button>
+                <button class="btn btn-primary btn-sm" onclick="openModal('new-goal')"><i class="fa-solid fa-plus"></i> Nova Meta</button>
             </div>
 
             <div class="goals-grid" id="goals-container">
-                <div style="grid-column: 1 / -1; text-align: center; padding: 4rem; background: white; border-radius: 1.5rem; border: 1px dashed #E2E8F0;">
-                    <div style="width: 80px; height: 80px; background: #F1F5F9; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem auto;">
-                        <i class="fa-solid fa-bullseye" style="font-size: 2rem; color: #94A3B8;"></i>
-                    </div>
-                    <h4 style="font-weight: 700; color: #334155; margin-bottom: 0.5rem;">Nenhuma meta encontrada</h4>
-                    <p style="color: #64748B; max-width: 300px; margin: 0 auto 1.5rem auto;">Defina um objetivo financeiro para começar a rastrear seu progresso.</p>
-                    <button class="btn btn-primary">Criar Nova Meta</button>
                 </div>
+
+            <div id="completed-section" style="display: none; margin-top: 3rem; border-top: 2px dashed #E2E8F0; padding-top: 2rem;">
+                <div class="section-header-row mb-4">
+                    <h3 class="section-title" style="color: #10B981;">
+                        <i class="fa-solid fa-check-circle"></i> Metas Concluídas
+                    </h3>
+                </div>
+                <div class="goals-grid" id="completed-goals-container" style="opacity: 0.7;">
+                    </div>
             </div>
         </section>
 
@@ -214,19 +209,16 @@
                     <h4>Primeira Meta</h4>
                     <span class="badge badge-gray text-xs">Bloqueado</span>
                 </div>
-                
                 <div class="achievement-card locked">
                     <div class="achieve-icon"><i class="fa-solid fa-piggy-bank"></i></div>
                     <h4>Economizador</h4>
                     <span class="badge badge-gray text-xs">Bloqueado</span>
                 </div>
-
                 <div class="achievement-card locked">
                     <div class="achieve-icon"><i class="fa-regular fa-calendar-check"></i></div>
                     <h4>5 Dias Seguidos</h4>
                     <span class="badge badge-gray text-xs">Bloqueado</span>
                 </div>
-
                 <div class="achievement-card locked">
                     <div class="achieve-icon"><i class="fa-solid fa-arrow-trend-up"></i></div>
                     <h4>Investidor Iniciante</h4>
@@ -235,26 +227,158 @@
             </div>
         </section>
 
+        <section id="tab-profile" class="tab-content">
+            <div class="mb-6">
+                <h3 class="section-title mb-1">Seu Perfil</h3>
+                <p class="text-muted text-sm">Gerencie seus dados e segurança</p>
+            </div>
+
+            <div class="profile-grid">
+                <div class="dash-card">
+                    <div class="card-header-row mb-4">
+                        <div class="icon-box bg-blue-light text-blue">
+                            <i class="fa-solid fa-camera"></i>
+                        </div>
+                        <h4 class="font-bold">Foto de Perfil</h4>
+                    </div>
+                    <form id="form-update-photo">
+                        <div class="avatar-preview-container mb-4">
+                            <img src="https://cdn-icons-png.flaticon.com/512/847/847969.png" alt="Avatar Atual" id="current-avatar-preview" class="user-avatar-lg">
+                        </div>
+                        <div class="input-group">
+                            <label>URL da Imagem</label>
+                            <div class="input-wrapper">
+                                <i class="fa-solid fa-link"></i>
+                                <input type="url" id="new-photo-url" placeholder="Cole o link da imagem aqui..." required>
+                            </div>
+                            <p class="text-xs text-muted mt-2">Dica: Use links do Flaticon ou Imgur.</p>
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100 mt-3">Atualizar Foto</button>
+                    </form>
+                </div>
+
+                <div class="dash-card">
+                    <div class="card-header-row mb-4">
+                        <div class="icon-box bg-purple-light text-purple">
+                            <i class="fa-solid fa-lock"></i>
+                        </div>
+                        <h4 class="font-bold">Segurança</h4>
+                    </div>
+                    <form id="form-update-password">
+                        <div class="input-group">
+                            <label>Senha Atual</label>
+                            <div class="input-wrapper">
+                                <i class="fa-solid fa-key"></i>
+                                <input type="password" id="current-password" placeholder="Para confirmar que é você" required>
+                            </div>
+                        </div>
+                        <div class="input-group">
+                            <label>Nova Senha</label>
+                            <div class="input-wrapper">
+                                <i class="fa-solid fa-lock"></i>
+                                <input type="password" id="new-password" placeholder="Mínimo 6 caracteres" required>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-outline w-100 mt-3">Alterar Senha</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <div id="modal-new-goal" class="modal-overlay">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Criar Nova Meta</h3>
+                <button class="btn-close" onclick="closeModal('new-goal')"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            <form id="form-new-goal">
+                <div class="input-group">
+                    <label>Nome da Meta</label>
+                    <div class="input-wrapper">
+                        <i class="fa-solid fa-pen"></i>
+                        <input type="text" id="goal-name" placeholder="Ex: Viagem, PS5..." required>
+                    </div>
+                </div>
+                <div class="input-group">
+                    <label>Valor Total (R$)</label>
+                    <div class="input-wrapper">
+                        <i class="fa-solid fa-dollar-sign"></i>
+                        <input type="number" id="goal-target" placeholder="0,00" step="0.01" required>
+                    </div>
+                </div>
+                <div class="input-group">
+                    <label>Ícone</label>
+                    <div class="icon-selector">
+                        <div class="icon-option selected" data-value="fa-piggy-bank" onclick="selectIcon(this)"><i class="fa-solid fa-piggy-bank"></i></div>
+                        <div class="icon-option" data-value="fa-plane" onclick="selectIcon(this)"><i class="fa-solid fa-plane"></i></div>
+                        <div class="icon-option" data-value="fa-car" onclick="selectIcon(this)"><i class="fa-solid fa-car"></i></div>
+                        <div class="icon-option" data-value="fa-gamepad" onclick="selectIcon(this)"><i class="fa-solid fa-gamepad"></i></div>
+                        <div class="icon-option" data-value="fa-house" onclick="selectIcon(this)"><i class="fa-solid fa-house"></i></div>
+                    </div>
+                    <input type="hidden" id="goal-icon" value="fa-piggy-bank">
+                </div>
+                <div class="modal-actions">
+                    <button type="button" class="btn btn-outline" onclick="closeModal('new-goal')">Cancelar</button>
+                    <button type="submit" class="btn btn-primary">Criar Meta</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div id="modal-edit-goal" class="modal-overlay">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Gerenciar Meta</h3>
+                <button class="btn-close" onclick="closeModal('edit-goal')"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            
+            <form id="form-edit-goal">
+                <input type="hidden" id="edit-goal-id">
+                <input type="hidden" id="edit-current-val"> 
+                
+                <div style="background: #F8FAFC; padding: 1rem; border-radius: 0.5rem; margin-bottom: 1.5rem;">
+                    <label class="text-sm font-bold mb-2 block" style="display:block; color:#334155;">O que deseja fazer?</label>
+                    <div class="flex gap-2 mb-3" style="display: flex; gap: 10px;">
+                        <label class="radio-btn" style="flex: 1;">
+                            <input type="radio" name="trans-type" value="deposit" checked>
+                            <span><i class="fa-solid fa-arrow-up"></i> Depositar</span>
+                        </label>
+                        <label class="radio-btn" style="flex: 1;">
+                            <input type="radio" name="trans-type" value="withdraw">
+                            <span><i class="fa-solid fa-arrow-down"></i> Sacar</span>
+                        </label>
+                    </div>
+                    
+                    <div class="input-group mb-0">
+                        <div class="input-wrapper">
+                            <i class="fa-solid fa-money-bill"></i>
+                            <input type="number" id="edit-amount" placeholder="Valor (R$)" step="0.01">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <label>Alterar Valor Total da Meta</label>
+                    <div class="input-wrapper">
+                        <i class="fa-solid fa-bullseye"></i>
+                        <input type="number" id="edit-target" placeholder="Novo total (Ex: 5000)" step="0.01" required>
+                    </div>
+                    <p class="text-xs text-muted mt-1">Ajuste o objetivo final se precisar.</p>
+                </div>
+
+                <div class="modal-actions">
+                    <button type="button" class="btn btn-outline" onclick="closeModal('edit-goal')">Cancelar</button>
+                    <button type="submit" class="btn btn-primary">Salvar Alterações</button>
+                </div>
+            </form>
+        </div>
     </div>
 
     <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-auth-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore-compat.js"></script>
-    
     <script src="script.js"></script>
-    <script>
-        function openTab(tabName) {
-            const contents = document.querySelectorAll('.tab-content');
-            contents.forEach(content => content.classList.remove('active'));
-            const buttons = document.querySelectorAll('.tab-btn');
-            buttons.forEach(btn => btn.classList.remove('active'));
-            
-            document.getElementById('tab-' + tabName).classList.add('active');
-            
-            // Ativa o botão corretamente
-            const btn = document.querySelector(`button[onclick="openTab('${tabName}')"]`);
-            if(btn) btn.classList.add('active');
-        }
-    </script>
 </body>
 </html>

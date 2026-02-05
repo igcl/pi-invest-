@@ -1562,3 +1562,163 @@ ul {
     .stat-header { margin-bottom: 1rem; }
     .stat-value { font-size: 1.75rem; }
 }
+
+/* ====================
+   ESTILOS DO MODAL
+   ==================== */
+.modal-overlay {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Fundo escuro transparente */
+    backdrop-filter: blur(4px);      /* Desfoque bonito no fundo */
+    display: none;                   /* Escondido por padrão */
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.modal-overlay.active {
+    display: flex;
+    opacity: 1;
+}
+
+.modal-content {
+    background: white;
+    padding: 2rem;
+    border-radius: 1.5rem;
+    width: 100%;
+    max-width: 450px;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+    transform: translateY(20px);
+    transition: transform 0.3s;
+}
+
+.modal-overlay.active .modal-content {
+    transform: translateY(0);
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.modal-header h3 { font-size: 1.25rem; font-weight: 700; color: var(--dark-bg); }
+
+.btn-close {
+    background: none; border: none; font-size: 1.25rem;
+    color: #94A3B8; cursor: pointer; transition: 0.2s;
+}
+.btn-close:hover { color: var(--danger); }
+
+/* Seletor de Ícones */
+.icon-selector {
+    display: flex; gap: 0.75rem; margin-top: 0.5rem;
+}
+
+.icon-option {
+    width: 3rem; height: 3rem;
+    border-radius: 0.75rem;
+    background: #F1F5F9;
+    color: #64748B;
+    display: flex; align-items: center; justify-content: center;
+    cursor: pointer; transition: 0.2s;
+    font-size: 1.25rem;
+    border: 2px solid transparent;
+}
+
+.icon-option:hover { background: #E2E8F0; }
+
+.icon-option.selected {
+    background: #F3E8FF;
+    color: var(--purple-primary);
+    border-color: var(--purple-primary);
+}
+
+.modal-actions {
+    display: flex; gap: 1rem; margin-top: 2rem;
+}
+.modal-actions .btn { flex: 1; }
+
+/* ====================
+   ABA PERFIL
+   ==================== */
+.profile-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+.card-header-row {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.icon-box {
+    width: 3rem; height: 3rem;
+    border-radius: 0.75rem;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.25rem;
+}
+
+.user-avatar-lg {
+    width: 80px; height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #E2E8F0;
+    display: block;
+    margin: 0 auto;
+}
+
+.w-100 { width: 100%; }
+.mt-3 { margin-top: 1rem; }
+.text-xs { font-size: 0.75rem; }
+
+/* ====================
+   ESTILO DOS BOTÕES DE TRANSAÇÃO (MODAL)
+   ==================== */
+.radio-btn {
+    cursor: pointer;
+    position: relative;
+}
+
+.radio-btn input {
+    display: none; /* Esconde a bolinha original */
+}
+
+/* Estado Padrão (Não selecionado) */
+.radio-btn span {
+    display: block;
+    width: 100%;
+    padding: 0.75rem;
+    text-align: center;
+    border: 2px solid #E2E8F0;
+    border-radius: 0.5rem;
+    color: #64748B;
+    font-weight: 600;
+    transition: all 0.2s;
+}
+
+/* Quando "Depositar" estiver marcado (Fica Roxo/Azul) */
+.radio-btn input[value="deposit"]:checked + span {
+    background-color: rgb(0, 255, 0); /* Ou use #6C63FF */
+    border-color: rgb(0, 255, 0);
+    color: rgb(255, 255, 255);
+}
+
+/* Quando "Sacar" estiver marcado (Fica Vermelho) */
+.radio-btn input[value="withdraw"]:checked + span {
+    background-color: #EF4444;
+    border-color: #EF4444;
+    color: white;
+}
+
+/* Hover simples */
+.radio-btn span:hover {
+    border-color: #CBD5E1;
+}
