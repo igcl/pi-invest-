@@ -45,6 +45,13 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // Redirecionar da Home se já estiver logado
+    if (window.location.pathname.endsWith('index.html') || window.location.pathname === '/') {
+        auth.onAuthStateChanged(user => {
+            if (user) window.location.href = 'dashboard.html';
+        });
+    }
+
     // ============================================================
     // 4. CADASTRO
     // ============================================================
@@ -323,7 +330,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 snapshot.forEach(doc => {
                     const meta = doc.data();
                     const metaID = doc.id;
-                    const porcentagem = Math.min(100, (meta.valorAtual / meta.valorMeta) * 100).toFixed(0);
+                    let porcentagem = meta.valorMeta > 0 ? (meta.valorAtual / meta.valorMeta) * 100 : 0;
+                    porcentagem = Math.min(100, porcentagem).toFixed(0);
                     // Regra: Se o valor atual for maior ou igual a meta, está concluída
                     const isCompleted = meta.valorAtual >= meta.valorMeta && meta.valorMeta > 0;
 
