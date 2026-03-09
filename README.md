@@ -11,6 +11,7 @@ Plataforma gamificada de educação financeira e gerenciamento de metas pessoais
 * **SIMONE CORDEIRO RAMOS** - *Layout*
 * **LUIS CARLOS DE AZEVEDO FILHO** - *Firebase*
 * **YURI D AMBROSI DA SILVA** - *QA e Testes*
+* **MAETHE BORBA PEREIRA DA SILVA** - *QA e Testes*
 * **STHEPHANY RAFAELA DOS SANTOS DIAS** - *Integração e Banco de Dados*
 * **VERONICA SILVEIRA DE ANDRADE** - *Documentação*
 
