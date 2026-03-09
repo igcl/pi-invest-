@@ -21,6 +21,7 @@ Plataforma gamificada de educação financeira e gerenciamento de metas pessoais
 
 * **Acesse o Projeto Online (Vercel):** [https://pi-invest.vercel.app/](https://pi-invest.vercel.app/)
 * **Repositório (GitHub):** https://github.com/igcl/pi-invest-
+* **Video mostrando o projeto:** https://youtu.be/zEsQHxqb4jo
 ---
 
 ## 🛠️ Tecnologias Utilizadas
